@@ -1,7 +1,6 @@
-Mail notificator for [Runnerty]:
-Runnerty module: Mail notificator
+# Mail notificator for [Runnerty]:
 
-Configuration sample:
+### Configuration sample:
 ```json
 {
   "id": "mail_default",
@@ -16,7 +15,7 @@ Configuration sample:
 }
 ```
 
-Plan sample:
+### Plan sample:
 ```json
 {
   "id":"mail_default",

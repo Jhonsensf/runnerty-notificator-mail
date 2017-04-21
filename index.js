@@ -105,7 +105,7 @@ class mailNotificator extends Notification {
                 transport.sendMail(mailOptions,
                   function (err, res) {
                     if (err) {
-                      _this.logger('error', 'Mail sender:',err);
+                      _this.logger('error', 'Mail sender:',JSON.stringify(err));
                       reject(err);
                     } else {
                       resolve(res);
@@ -114,13 +114,13 @@ class mailNotificator extends Notification {
               }
             })
             .catch(function (err) {
-              _this.logger('error', 'Mail sender:',err);
+              _this.logger('error', 'Mail sender:',JSON.stringify(err));
               reject(err);
             });
 
         })
         .catch(function (err) {
-          _this.logger('error', 'Mail sender:',err);
+          _this.logger('error', 'Mail sender:',JSON.stringify(err));
           reject(err);
         });
 

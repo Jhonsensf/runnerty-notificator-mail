@@ -10,14 +10,6 @@ class mailNotificator extends Notification {
     super(notification);
   }
 
-  notificate(values) {
-    var _this = this;
-    _this.getValues(values)
-      .then((res) => {
-        _this.queue(_this.channel, res);
-      });
-  }
-
   send(notification) {
     var _this = this;
     return new Promise((resolve, reject) => {

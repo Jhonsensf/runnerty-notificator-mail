@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "mail",
+  "title": "runnerty-notificator-mail",
   "definitions": {
     "config":
       { "type": "object",
         "required": ["id","type","from","transport","templateDir","template"],
         "properties":{
           "id": {"type": "string"},
-          "type": {"type": "string", "pattern": "\\bmail\\b"},
+          "type": {"type": "string", "pattern": "runnerty-notificator-mail"},
           "from":{"type":"string"},
           "transport":{"type":["string","object"]},
           "templateDir":{"type":"string"},

@@ -39,24 +39,6 @@ class mailNotificator extends Notification {
       var htmlTemplate = path.resolve(templateDir, 'html.html');
       var txtTemplate = path.resolve(templateDir, 'text.txt');
 
-
-      if(notification.attachments && notification.attachments.length > 0){
-        var attachments = [];
-        var attachmentsLength = notification.attachments.length;
-
-        while (attachmentsLength--) {
-          var keys = Object.keys(notification.attachments[attachmentsLength]);
-          var keysLength = keys.length;
-          var attAux = {};
-          if (keysLength > 0) {
-            while (keysLength--) {
-              attAux[keys[keysLength]] = _this.replaceWith(notification.attachments[attachmentsLength][keys[keysLength]], notification.params);
-            }
-            attachments.push(attAux);
-          }
-        }
-      }
-
       filesReads.push(readFilePromise('html', htmlTemplate));
       filesReads.push(readFilePromise('text', txtTemplate));
 
@@ -87,7 +69,7 @@ class mailNotificator extends Notification {
                 subject: notification.subject,
                 text: text,
                 html: html,
-                attachments: attachments
+                attachments: notification.attachments
               };
 
               if (notification.disable) {
